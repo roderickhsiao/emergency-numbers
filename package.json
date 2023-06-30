@@ -4,8 +4,8 @@
   "description": "International emergency numbers",
   "main": "dist/index.js",
   "scripts": {
-    "generate": "babel-node scripts/scraper",
     "build": "tsc --build",
+    "build:page": "tsc --build --config tsconfig-page.json",
     "clean": "tsc --build --clean",
     "test": "jest"
   },
