@@ -1,11 +1,8 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.NumberType = void 0;
-var NumberType;
+export var NumberType;
 (function (NumberType) {
     NumberType["FIRE"] = "fire";
     NumberType["POLICE"] = "police";
     NumberType["AMBULANCE"] = "ambulance";
-})(NumberType || (exports.NumberType = NumberType = {}));
+})(NumberType || (NumberType = {}));
 ;
 //# sourceMappingURL=constants.js.map

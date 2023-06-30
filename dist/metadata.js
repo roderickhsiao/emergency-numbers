@@ -1,6 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var emergencyNumbers = {
+const emergencyNumbers = {
     AD: {
         fire: 118,
         police: 110,
@@ -962,5 +960,5 @@ var emergencyNumbers = {
         ambulance: 994,
     },
 };
-exports.default = emergencyNumbers;
+export default emergencyNumbers;
 //# sourceMappingURL=metadata.js.map

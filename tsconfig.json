@@ -6,7 +6,9 @@
     "removeComments": false,
     "sourceMap": true,
     "outDir": "dist",
-    "moduleResolution" : "Node",
+    "target": "es2015",
+    "module": "es2015",
+    "moduleResolution": "node",
     "lib": [
       "dom",
       "dom.iterable",
