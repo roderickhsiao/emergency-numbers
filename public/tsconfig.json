@@ -23,7 +23,7 @@
     "./script.ts",
     "**/*.ts",
     "**/*.tsx",
-    "../node_modules"
+    "../node_modules/country-code-emoji/**/*"
   ],
   "exclude": [""]
 }
