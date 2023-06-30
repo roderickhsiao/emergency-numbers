@@ -7,7 +7,15 @@
     "sourceMap": true,
     "target": "es5",
     "module": "commonjs",
-    "outDir": "dist"
+    "outDir": "dist",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext",
+      "esnext.intl",
+      "es2017.intl",
+      "es2018.intl"
+    ],
   },
   "include": [
     "./script.ts",
