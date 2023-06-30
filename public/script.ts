@@ -62,15 +62,16 @@ function createTableRow(countryCode, countryName, emergencyNumbers) {
 // Function to generate the table
 function generateTable() {
   const table = document.createElement('table');
-  table.className = 'table-auto mx-auto';
+  table.className = 'w-full text-sm text-left text-gray-500 dark:text-gray-400';
 
   const tableHeader = table.createTHead();
   const headerRow = tableHeader.insertRow();
+  tableHeader.className = 'text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 sticky top-0';
   const headers = ['Flag', 'Country Code', 'Country Name', 'Fire', 'Police', 'Ambulance'];
 
   headers.forEach((headerText) => {
     const headerCell = document.createElement('th');
-    headerCell.className = 'px-4 py-2 bg-gray-200';
+    headerCell.className = 'px-6 py-3';
     headerCell.textContent = headerText;
     headerRow.appendChild(headerCell);
   });
@@ -92,7 +93,6 @@ function generateTable() {
 // Display the table
 function displayTable() {
   const emergencyNumbersTable = generateTable();
-  alert(emergencyNumbersTable);
   document.getElementById('emergency-numbers')?.appendChild(emergencyNumbersTable);
 }
 
