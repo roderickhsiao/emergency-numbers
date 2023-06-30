@@ -1,8 +1,8 @@
-import metadata from './metadata';
+import metadata from './metadata.js';
 
-import { NumberType } from './constants';
+import { NumberType } from './constants.js';
 
-export * from './constants';
+export * from './constants.js';
 
 // https://travel.stackexchange.com/questions/149032/call-local-emergency-number-using-a-foreign-mobile-number
 // 112 Should work in most countries, but not all.
