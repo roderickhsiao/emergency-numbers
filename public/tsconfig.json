@@ -6,7 +6,7 @@
     "removeComments": false,
     "sourceMap": true,
     "outDir": "dist",
-    "moduleResolution" : "node",
+    "moduleResolution" : "Node",
     "lib": [
       "dom",
       "dom.iterable",
@@ -17,6 +17,7 @@
     ],
     "allowJs": true,
   },
+  "module": "umd",
   "include": [
     "./script.ts",
   ],
