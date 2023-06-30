@@ -1,12 +1,39 @@
 "use strict";
+var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
+    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+        if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+        }
+    }
+    return to.concat(ar || Array.prototype.slice.call(from));
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-var country_code_emoji_1 = require("country-code-emoji");
 var index_1 = require("../index");
+// country code regex
+var CC_REGEX = /^[a-z]{2}$/i;
+// flag emoji use 2 regional indicator symbols, and each symbol is 2 chars
+var FLAG_LENGTH = 4;
+// offset between uppercase ascii and regional indicator symbols
+var OFFSET = 127397;
+/**
+ * convert country code to corresponding flag emoji
+ * @param {string} cc - country code string
+ * @returns {string} flag emoji
+ */
+function countryCodeEmoji(cc) {
+    if (!CC_REGEX.test(cc)) {
+        var type = typeof cc;
+        throw new TypeError("cc argument must be an ISO 3166-1 alpha-2 string, but got '".concat(type === 'string' ? cc : type, "' instead."));
+    }
+    var codePoints = __spreadArray([], cc.toUpperCase(), true).map(function (c) { return c.codePointAt() + OFFSET; });
+    return String.fromCodePoint.apply(String, codePoints);
+}
 // Function to generate table rows
 function createTableRow(countryCode, countryName, emergencyNumbers) {
     var row = document.createElement('tr');
     var flagCell = document.createElement('td');
-    flagCell.innerHTML = (0, country_code_emoji_1.countryCodeEmoji)(countryCode);
+    flagCell.innerHTML = countryCodeEmoji(countryCode);
     row.appendChild(flagCell);
     var codeCell = document.createElement('td');
     codeCell.textContent = countryCode;
