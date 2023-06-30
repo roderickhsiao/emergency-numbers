@@ -23,6 +23,7 @@
     "./script.ts",
     "**/*.ts",
     "**/*.tsx",
+    "../node_modules"
   ],
   "exclude": [""]
 }
