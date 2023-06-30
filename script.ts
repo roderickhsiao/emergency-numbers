@@ -1,4 +1,3 @@
-// @ts-expect-error
 import { countryCodeEmoji } from 'country-code-emoji';
 
 import {

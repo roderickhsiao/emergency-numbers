@@ -45,7 +45,6 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    // @ts-expect-error
     var country_code_emoji_1 = require("country-code-emoji");
     var index_1 = require("../index");
     // Function to generate table rows
