@@ -65,6 +65,7 @@ function generateTable() {
 // Display the table
 function displayTable() {
   const emergencyNumbersTable = generateTable();
+  alert(emergencyNumbersTable);
   document.getElementById('emergency-numbers')?.appendChild(emergencyNumbersTable);
 }
 
