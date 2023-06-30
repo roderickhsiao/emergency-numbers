@@ -10,6 +10,7 @@
     "outDir": "dist"
   },
   "include": [
-    "metadata.ts",
-  ]
+    "./scripts.ts",
+  ],
+  "exclude": ["node_modules"]
 }
