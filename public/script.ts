@@ -28,31 +28,39 @@ function countryCodeEmoji(cc) {
   return String.fromCodePoint(...codePoints);
 }
 
+const cellClassName = 'px-6 py-4';
+
 // Function to generate table rows
 function createTableRow(countryCode, countryName, emergencyNumbers) {
   const row = document.createElement('tr');
 
   const flagCell = document.createElement('td');
+  flagCell.className = cellClassName;
   flagCell.innerHTML = countryCodeEmoji(countryCode);
   row.appendChild(flagCell);
 
   const codeCell = document.createElement('td');
+  codeCell.className = cellClassName;
   codeCell.textContent = countryCode;
   row.appendChild(codeCell);
 
   const nameCell = document.createElement('td');
+  nameCell.className = cellClassName;
   nameCell.textContent = countryName;
   row.appendChild(nameCell);
 
   const fireCell = document.createElement('td');
   fireCell.textContent = emergencyNumbers.fire;
+  fireCell.textContent = emergencyNumbers.fire;
   row.appendChild(fireCell);
 
   const policeCell = document.createElement('td');
+  policeCell.className = cellClassName;
   policeCell.textContent = emergencyNumbers.police;
   row.appendChild(policeCell);
 
   const ambulanceCell = document.createElement('td');
+  ambulanceCell.className = cellClassName;
   ambulanceCell.textContent = emergencyNumbers.ambulance;
   row.appendChild(ambulanceCell);
 
@@ -62,16 +70,16 @@ function createTableRow(countryCode, countryName, emergencyNumbers) {
 // Function to generate the table
 function generateTable() {
   const table = document.createElement('table');
-  table.className = 'w-full text-sm text-left text-gray-500 dark:text-gray-400';
+  table.className = 'w-full text-sm text-left text-gray-500 dark:text-gray-400 table-auto';
 
   const tableHeader = table.createTHead();
   const headerRow = tableHeader.insertRow();
-  tableHeader.className = 'text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 sticky top-0';
+  tableHeader.className = 'text-l text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 sticky top-0';
   const headers = ['Flag', 'Country Code', 'Country Name', '🚒 Fire', '🚓 Police', '🚑 Ambulance'];
 
   headers.forEach((headerText) => {
     const headerCell = document.createElement('th');
-    headerCell.className = 'px-4 py-2 bg-gray-200';
+    headerCell.className = 'px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white';
     headerCell.textContent = headerText;
     headerRow.appendChild(headerCell);
   });
