@@ -6,6 +6,7 @@
     "removeComments": false,
     "sourceMap": true,
     "outDir": "dist",
+    "moduleResolution" : "nodenext",
     "lib": [
       "dom",
       "dom.iterable",
@@ -14,6 +15,7 @@
       "es2017.intl",
       "es2018.intl"
     ],
+    "module": "umd"
   },
   "include": [
     "./script.ts",
