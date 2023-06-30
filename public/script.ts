@@ -1,11 +1,18 @@
+// @ts-expect-error
+import { countryCodeEmoji } from 'country-code-emoji';
+
 import {
   getEmergencyNumberByCountry,
-  getSupportedCountries,
+  getSupportedCountries
 } from '../index';
 
 // Function to generate table rows
 function createTableRow(countryCode, countryName, emergencyNumbers) {
   const row = document.createElement('tr');
+
+  const flagCell = document.createElement('td');
+  flagCell.innerHTML = countryCodeEmoji(countryCode);
+  row.appendChild(flagCell);
 
   const codeCell = document.createElement('td');
   codeCell.textContent = countryCode;
@@ -31,19 +38,13 @@ function createTableRow(countryCode, countryName, emergencyNumbers) {
 }
 
 // Function to generate the table
-function generateTable() {
+async function generateTable() {
   const table = document.createElement('table');
   table.className = 'table-auto mx-auto';
 
   const tableHeader = table.createTHead();
   const headerRow = tableHeader.insertRow();
-  const headers = [
-    'Country Code',
-    'Country Name',
-    'Fire',
-    'Police',
-    'Ambulance',
-  ];
+  const headers = ['Flag', 'Country Code', 'Country Name', 'Fire', 'Police', 'Ambulance'];
 
   headers.forEach((headerText) => {
     const headerCell = document.createElement('th');
@@ -55,17 +56,21 @@ function generateTable() {
   const tableBody = table.createTBody();
   const countries = getSupportedCountries();
 
-  countries.forEach((countryCode) => {
+  for (const countryCode of countries) {
     const countryMetadata = getEmergencyNumberByCountry(countryCode);
-    const countryName = countryCode; // Replace with actual country name retrieval logic
+    const countryName = new Intl.DisplayNames(['en'], { type: 'region' }).of(countryCode);
 
     const row = createTableRow(countryCode, countryName, countryMetadata);
     tableBody.appendChild(row);
-  });
+  }
 
   return table;
 }
 
 // Display the table
-const emergencyNumbersTable = generateTable();
-document.getElementById('emergency-numbers')?.appendChild(emergencyNumbersTable);
+async function displayTable() {
+  const emergencyNumbersTable = await generateTable();
+  document.getElementById('emergency-numbers')?.appendChild(emergencyNumbersTable);
+}
+
+displayTable();

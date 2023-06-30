@@ -10,7 +10,7 @@
     "outDir": "dist"
   },
   "include": [
-    "./scripts.ts",
+    "./script.ts",
   ],
   "exclude": ["node_modules"]
 }
