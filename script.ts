@@ -1,9 +1,5 @@
 import { countryCodeEmoji } from 'country-code-emoji';
-
-import {
-  getEmergencyNumberByCountry,
-  getSupportedCountries
-} from '../index';
+import { getEmergencyNumberByCountry, getSupportedCountries } from '../index';
 
 // Function to generate table rows
 function createTableRow(countryCode, countryName, emergencyNumbers) {
@@ -37,7 +33,7 @@ function createTableRow(countryCode, countryName, emergencyNumbers) {
 }
 
 // Function to generate the table
-async function generateTable() {
+function generateTable() {
   const table = document.createElement('table');
   table.className = 'table-auto mx-auto';
 
@@ -55,20 +51,20 @@ async function generateTable() {
   const tableBody = table.createTBody();
   const countries = getSupportedCountries();
 
-  for (const countryCode of countries) {
+  countries.forEach((countryCode) => {
     const countryMetadata = getEmergencyNumberByCountry(countryCode);
     const countryName = new Intl.DisplayNames(['en'], { type: 'region' }).of(countryCode);
 
     const row = createTableRow(countryCode, countryName, countryMetadata);
     tableBody.appendChild(row);
-  }
+  });
 
   return table;
 }
 
 // Display the table
-async function displayTable() {
-  const emergencyNumbersTable = await generateTable();
+function displayTable() {
+  const emergencyNumbersTable = generateTable();
   document.getElementById('emergency-numbers')?.appendChild(emergencyNumbersTable);
 }
 
