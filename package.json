@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc --build",
-    "build:page": "tsc --build --config tsconfig-page.json",
+    "build:page": "tsc --project public",
     "clean": "tsc --build --clean",
     "test": "jest"
   },

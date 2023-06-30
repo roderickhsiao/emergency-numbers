@@ -7,9 +7,10 @@
     "sourceMap": true,
     "target": "es5",
     "module": "commonjs",
-    "outDir": "public"
+    "outDir": "dist"
   },
   "include": [
-    "metadata.ts",
-  ]
+    "./scripts.ts",
+  ],
+  "exclude": ["node_modules"]
 }
