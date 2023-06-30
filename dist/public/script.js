@@ -1,4 +1,4 @@
-import { getEmergencyNumberByCountry, getSupportedCountries } from '../index';
+import { getEmergencyNumberByCountry, getSupportedCountries } from '../index.js';
 // country code regex
 const CC_REGEX = /^[a-z]{2}$/i;
 // flag emoji use 2 regional indicator symbols, and each symbol is 2 chars
