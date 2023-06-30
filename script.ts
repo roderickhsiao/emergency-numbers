@@ -28,7 +28,7 @@ function countryCodeEmoji(cc) {
   return String.fromCodePoint(...codePoints);
 }
 
-const cellClassName = 'px-6 py-4';
+const cellClassName = 'px-6 py-4 text-2xl';
 
 // Function to generate table rows
 function createTableRow(countryCode, countryName, emergencyNumbers) {

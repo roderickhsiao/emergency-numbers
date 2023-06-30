@@ -18,7 +18,7 @@ function countryCodeEmoji(cc) {
     const codePoints = [...cc.toUpperCase()].map(c => c.codePointAt() + OFFSET);
     return String.fromCodePoint(...codePoints);
 }
-const cellClassName = 'px-6 py-4';
+const cellClassName = 'px-6 py-4 text-2xl';
 // Function to generate table rows
 function createTableRow(countryCode, countryName, emergencyNumbers) {
     const row = document.createElement('tr');
