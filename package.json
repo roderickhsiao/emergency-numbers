@@ -1,0 +1,35 @@
+{
+  "name": "emergency-numbers",
+  "version": "1.0.0",
+  "description": "International emergency numbers",
+  "main": "dist/index.js",
+  "scripts": {
+    "generate": "babel-node scripts/scraper",
+    "build": "tsc --build",
+    "clean": "tsc --build --clean",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roderickhsiao/emergency-numbers.git"
+  },
+  "keywords": [
+    "emergency",
+    "phone",
+    "numbers"
+  ],
+  "author": "Roderick Hsiao <roderickhsiao@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/roderickhsiao/emergency-numbers/issues"
+  },
+  "homepage": "https://github.com/roderickhsiao/emergency-numbers#readme",
+  "devDependencies": {
+    "@babel/core": "^7.22.5",
+    "@babel/node": "^7.22.5",
+    "@babel/preset-typescript": "^7.22.5",
+    "@types/jest": "^29.5.2",
+    "jest": "^29.5.0",
+    "typescript": "^5.1.6"
+  }
+}
