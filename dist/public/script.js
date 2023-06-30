@@ -48,10 +48,10 @@ function generateTable() {
     const tableHeader = table.createTHead();
     const headerRow = tableHeader.insertRow();
     tableHeader.className = 'text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 sticky top-0';
-    const headers = ['Flag', 'Country Code', 'Country Name', 'Fire', 'Police', 'Ambulance'];
+    const headers = ['Flag', 'Country Code', 'Country Name', '🚒 Fire', '🚓 Police', '🚑 Ambulance'];
     headers.forEach((headerText) => {
         const headerCell = document.createElement('th');
-        headerCell.className = 'px-6 py-3';
+        headerCell.className = 'px-4 py-2 bg-gray-200';
         headerCell.textContent = headerText;
         headerRow.appendChild(headerCell);
     });
