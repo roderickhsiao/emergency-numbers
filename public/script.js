@@ -1,7 +1,7 @@
 import {
   getEmergencyNumberByCountry,
   getSupportedCountries,
-} from 'emergency-numbers-library';
+} from '../dist/index';
 
 // Function to generate table rows
 function createTableRow(countryCode, countryName, emergencyNumbers) {
