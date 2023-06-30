@@ -17,7 +17,6 @@
     ],
     "allowJs": true,
   },
-  "module": "umd",
   "include": [
     "./script.ts",
   ],
