@@ -35,7 +35,7 @@ function createTableRow(countryCode, countryName, emergencyNumbers) {
     nameCell.textContent = countryName;
     row.appendChild(nameCell);
     const fireCell = document.createElement('td');
-    fireCell.textContent = emergencyNumbers.fire;
+    fireCell.className = cellClassName;
     fireCell.textContent = emergencyNumbers.fire;
     row.appendChild(fireCell);
     const policeCell = document.createElement('td');
