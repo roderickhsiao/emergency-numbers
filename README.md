@@ -25,9 +25,9 @@ import {
   getEmergencyNumberByCountry,
   getEmergencyNumberByCountryAndType,
   getSupportedCountries
-} from 'emergency-numbers-library';
+} from 'emergency-numbers';
 
-import { NumberType } from 'emergency-numbers-library/constants';
+import { NumberType } from 'emergency-numbers/constants';
 ```
 
 ### Retrieving Emergency Numbers
