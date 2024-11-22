@@ -1,8 +1,10 @@
 {
   "name": "emergency-numbers",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "International emergency numbers",
   "main": "dist/index.js",
+  "module": "index.js",
+  "types": "types.ts",
   "scripts": {
     "build": "tsc --build",
     "build:page": "tsc --project public",
